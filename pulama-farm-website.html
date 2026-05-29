@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulama Farm Mamaki Tea</title>
+  <meta name="description" content="Pulama Farm Mamaki Tea — caffeine-free Hawaiian herbal tea grown in Kona and harvested in small batches." />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=zodiak@400,700&display=swap" rel="stylesheet">
+  <style>
+    :root,[data-theme="light"]{--text-xs:clamp(.75rem,.7rem + .25vw,.875rem);--text-sm:clamp(.875rem,.8rem + .35vw,1rem);--text-base:clamp(1rem,.95rem + .25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);--text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--text-2xl:clamp(2.4rem,1.4rem + 3vw,4.8rem);--color-bg:#f7f4ee;--color-surface:#fcfbf7;--color-border:#d5ccbd;--color-text:#1f271f;--color-text-muted:#536151;--color-text-faint:#7f8a7d;--color-inverse:#fcfbf7;--color-primary:#305f4b;--color-gold:#c5912f;--color-clay:#9e6234;--radius-lg:1.25rem;--radius-xl:1.75rem;--radius-full:9999px;--shadow-sm:0 2px 8px rgba(43,38,27,.06);--content:1180px;--font-body:'Satoshi',system-ui,sans-serif;--font-display:'Zodiak',Georgia,serif}
+    [data-theme="dark"]{--color-bg:#141715;--color-surface:#1a1f1b;--color-border:#394339;--color-text:#edf0e8;--color-text-muted:#bac3b7;--color-text-faint:#8f998c;--color-inverse:#101311;--color-primary:#6ea484;--color-gold:#d8a54c;--color-clay:#c18858}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-body);font-size:var(--text-base);line-height:1.65;color:var(--color-text);background:var(--color-bg)}img{display:block;max-width:100%;height:auto}a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer;border:none;background:none}.container{width:min(calc(100% - 2rem),var(--content));margin-inline:auto}.skip-link{position:absolute;left:-9999px;top:0}.skip-link:focus{left:1rem;top:1rem;background:var(--color-primary);color:var(--color-inverse);padding:.75rem 1rem;border-radius:var(--radius-full);z-index:1000}.site-header{position:sticky;top:0;z-index:50;backdrop-filter:blur(18px);background:color-mix(in srgb,var(--color-bg) 82%,transparent);border-bottom:1px solid color-mix(in srgb,var(--color-text) 12%,transparent)}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 0}.brand{display:flex;align-items:center;gap:.85rem;font-weight:700}.brand-mark{width:2.35rem;height:2.35rem;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--color-gold),var(--color-primary));display:grid;place-items:center}.brand-mark svg{width:1.4rem;height:1.4rem;color:white}.brand-text strong{display:block;font-size:var(--text-sm)}.brand-text span{display:block;font-size:var(--text-xs);color:var(--color-text-muted)}.nav-links{display:flex;gap:1.15rem;align-items:center;flex-wrap:wrap}.nav-links a{font-size:var(--text-sm);color:var(--color-text-muted)}.theme-toggle{width:2.7rem;height:2.7rem;border-radius:50%;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--color-text) 12%,transparent);background:var(--color-surface)}
+    .hero{position:relative;min-height:88vh;display:grid;align-items:end;overflow:hidden}.hero:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,14,12,.08) 8%,rgba(16,20,16,.45) 55%,rgba(16,20,16,.82) 100%);z-index:1}.hero-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.hero-content{position:relative;z-index:2;color:#fff8f0;padding:clamp(6rem,10vw,8rem) 0 3rem}.eyebrow{display:inline-flex;align-items:center;gap:.55rem;padding:.5rem .9rem;border-radius:var(--radius-full);background:rgba(255,248,240,.12);border:1px solid rgba(255,255,255,.16);font-size:var(--text-xs);letter-spacing:.08em;text-transform:uppercase}h1,h2,h3{font-family:var(--font-display);line-height:1.08}.hero h1{font-size:var(--text-2xl);max-width:11ch;margin-top:1rem}.hero-copy{margin-top:1rem;max-width:42rem;color:rgba(255,248,240,.88)}.hero-actions{margin-top:1.6rem;display:flex;gap:1rem;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:.9rem 1.25rem;border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:700}.btn-primary{background:var(--color-gold);color:#241c11}.btn-secondary{background:rgba(255,255,255,.08);color:#fff8f0;border:1px solid rgba(255,255,255,.2)}
+    .hero-facts,.benefits-grid,.brew-wrap,.testimonials,.faq-grid{display:grid;gap:1rem}.hero-facts{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:2.25rem}.hero-facts .fact{padding:1rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius-lg)}.fact strong{display:block;font-size:var(--text-sm)}.fact span{display:block;font-size:var(--text-xs);color:rgba(255,248,240,.82);margin-top:.2rem}section{padding:clamp(3.5rem,8vw,6rem) 0}.section-head{display:grid;gap:.8rem;margin-bottom:2rem}.section-head p{max-width:46rem;color:var(--color-text-muted)}.kicker{color:var(--color-primary);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.12em;font-weight:700}
+    .story-grid,.split-grid,.cta-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:1.5rem;align-items:stretch}.card{background:var(--color-surface);border:1px solid color-mix(in srgb,var(--color-text) 10%,transparent);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm)}.story-copy{padding:2rem;display:grid;gap:1rem}.story-copy p,.benefit p,.step p,details p,blockquote p{color:var(--color-text-muted)}.bullet-list{display:grid;gap:.9rem;margin-top:.75rem}.bullet-row{display:flex;gap:.85rem;align-items:flex-start;padding-bottom:.85rem;border-bottom:1px solid color-mix(in srgb,var(--color-text) 8%,transparent)}.bullet-row:last-child{border-bottom:none;padding-bottom:0}.bullet-list i{width:1.9rem;height:1.9rem;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--color-primary) 12%,var(--color-surface));color:var(--color-primary);font-style:normal;font-weight:700;flex:none}.story-photo,.split-photo img,.about-photo img{height:100%;min-height:420px;object-fit:cover;border-radius:var(--radius-xl)}
+    .benefits-grid{grid-template-columns:repeat(3,1fr)}.benefit{padding:1.35rem;display:grid;gap:.85rem}.benefit-icon{width:2.8rem;height:2.8rem;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--color-gold) 25%,var(--color-surface));color:#5e4313;font-size:1.2rem}.split{background:linear-gradient(180deg,color-mix(in srgb,var(--color-primary) 5%,var(--color-bg)),var(--color-bg))}.split-grid{grid-template-columns:.95fr 1.05fr;align-items:center}.about-copy{display:grid;gap:1rem}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}.stat{padding:1rem 1.1rem;background:var(--color-surface);border:1px solid color-mix(in srgb,var(--color-text) 10%,transparent);border-radius:var(--radius-lg)}.stat strong{display:block;font-size:var(--text-lg);color:var(--color-primary);font-family:var(--font-display)}.brew-wrap{grid-template-columns:repeat(4,1fr)}.step{padding:1.4rem}.step-number{width:2.4rem;height:2.4rem;border-radius:50%;background:var(--color-primary);color:var(--color-inverse);display:grid;place-items:center;font-weight:700;margin-bottom:1rem}.pairings{margin-top:1.35rem;padding:1.2rem 1.3rem;border-radius:var(--radius-lg);background:color-mix(in srgb,var(--color-gold) 12%,var(--color-surface));border:1px solid color-mix(in srgb,var(--color-gold) 26%,transparent)}
+    .faq-grid{grid-template-columns:repeat(2,1fr)}details{padding:1.15rem 1.2rem}details summary{list-style:none;cursor:pointer;font-weight:700;display:flex;justify-content:space-between;gap:1rem}details summary::-webkit-details-marker{display:none}.cta{background:linear-gradient(135deg,color-mix(in srgb,var(--color-primary) 90%,black 8%),color-mix(in srgb,var(--color-primary) 68%,var(--color-clay)));color:#fff8f0}.cta p{color:rgba(255,248,240,.86);max-width:40rem}.contact-panel{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-xl);padding:1.5rem}.contact-stack{display:grid;gap:1rem;margin-top:1rem}.contact-item{padding:.95rem 1rem;border-radius:var(--radius-lg);background:rgba(255,255,255,.08)}.contact-item span{display:block;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.08em;opacity:.75;margin-bottom:.25rem}.testimonials{grid-template-columns:repeat(3,1fr)}blockquote{padding:1.35rem}blockquote footer{margin-top:1rem;font-size:var(--text-xs);color:var(--color-text-faint);text-transform:uppercase;letter-spacing:.08em}.site-footer{padding:2rem 0 3rem;border-top:1px solid color-mix(in srgb,var(--color-text) 10%,transparent)}.footer-wrap{display:flex;justify-content:space-between;gap:1rem;align-items:center;flex-wrap:wrap;color:var(--color-text-muted);font-size:var(--text-sm)}.footer-links{display:flex;gap:1rem;flex-wrap:wrap}
+    @media (max-width:960px){.nav-links{display:none}.hero-facts,.benefits-grid,.brew-wrap,.testimonials,.faq-grid,.story-grid,.split-grid,.cta-wrap{grid-template-columns:1fr 1fr}}
+    @media (max-width:720px){.hero-facts,.benefits-grid,.brew-wrap,.testimonials,.faq-grid,.story-grid,.split-grid,.cta-wrap,.stats{grid-template-columns:1fr}.story-photo,.split-photo img,.about-photo img{min-height:300px}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#top" class="brand" aria-label="Pulama Farm home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20c0-5 2.5-8.2 7-10-1 4.5-4 8-7 10Z"></path><path d="M12 20c0-4.7-2.3-7.8-7-10 .8 4.8 3.8 8.2 7 10Z"></path><path d="M12 20V7"></path></svg>
+        </span>
+        <span class="brand-text"><strong>Pulama Farm</strong><span>Mamaki tea from Kona</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#farm">Our Farm</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#mamaki">About Mamaki</a>
+        <a href="#brew">How to Brew</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" data-theme-toggle aria-label="Switch theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero" id="top">
+      <img class="hero-media" src="./hero.jpeg" alt="Sunset view from Pulama Farm over the Kona coastline" width="1600" height="1067" />
+      <div class="container hero-content">
+        <span class="eyebrow">Big Island grown · Caffeine free · Small batch</span>
+        <h1>Hawaiian Mamaki tea grown with care in Kona.</h1>
+        <p class="hero-copy">Pulama Farm offers a calm, earthy cup rooted in Hawaiian tradition. Our Mamaki tea is harvested in small batches, dried in the Kona sun, and prepared from carefully selected leaves for flavor, freshness, and daily ritual.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Order Mamaki Tea</a>
+          <a class="btn btn-secondary" href="#brew">See brewing guide</a>
+        </div>
+        <div class="hero-facts">
+          <div class="fact"><strong>3-acre estate</strong><span>Pulama Farm in Kona, Hawaii</span></div>
+          <div class="fact"><strong>1,350 ft elevation</strong><span>Ideal growing conditions</span></div>
+          <div class="fact"><strong>Caffeine free</strong><span>Calm focus, day or evening</span></div>
+          <div class="fact"><strong>Small-batch harvest</strong><span>Carefully picked leaves</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="farm">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Our Farm</span>
+          <h2>Pulama Farm is a quiet growing place above the Kona coast.</h2>
+          <p>Set in Makalei Estates, Pulama Farm is described as a 3-acre estate where Mamaki is grown at about 1,350 feet elevation. The leaves are harvested in very small batches, dried in the Kona sun, and selected carefully to preserve both flavor and character.</p>
+        </div>
+        <div class="story-grid">
+          <article class="card story-copy">
+            <p>The site is built around a simple promise: careful cultivation, intentional harvesting, and a tea that feels connected to place. The farm story also highlights a sustainability-first approach, avoiding synthetic fertilizers and pesticides.</p>
+            <div class="bullet-list">
+              <div class="bullet-row"><i>01</i><div><strong>Hand-selected leaves</strong><br><span>Only the best leaves are picked to support a clean, balanced cup.</span></div></div>
+              <div class="bullet-row"><i>02</i><div><strong>Sun-dried in Kona</strong><br><span>Drying in the Kona sun reinforces the handcrafted, local identity of the tea.</span></div></div>
+              <div class="bullet-row"><i>03</i><div><strong>Sustainably grown</strong><br><span>The farm emphasizes growing without synthetic fertilizers and pesticides.</span></div></div>
+            </div>
+          </article>
+          <figure class="split-photo">
+            <img class="story-photo card" src="./farm.jpeg" alt="Mamaki plants growing at Pulama Farm with ocean view beyond" width="1536" height="2048" loading="lazy" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Benefits</span>
+          <h2>A restorative tea built for calm, clarity, and everyday wellness.</h2>
+          <p>Your source text describes Mamaki as a traditional Hawaiian herbal tea valued for mental clarity, calm focus, digestive comfort, antioxidant support, and a naturally soothing caffeine-free experience.</p>
+        </div>
+        <div class="benefits-grid">
+          <article class="card benefit"><div class="benefit-icon">01</div><h3>Mental clarity</h3><p>The tea is positioned as supporting focus and calm attention without the jittery feeling associated with caffeinated drinks.</p></article>
+          <article class="card benefit"><div class="benefit-icon">02</div><h3>Immune support</h3><p>The document highlights antioxidants including polyphenols, catechins, flavonoids, and quercetin.</p></article>
+          <article class="card benefit"><div class="benefit-icon">03</div><h3>Heart-friendly ritual</h3><p>The source material says these compounds may help support circulation and may help reduce blood pressure and cholesterol levels.</p></article>
+          <article class="card benefit"><div class="benefit-icon">04</div><h3>Digestive comfort</h3><p>Mamaki is described as helping digestion, easing bloating after meals, and gently soothing abdominal discomfort.</p></article>
+          <article class="card benefit"><div class="benefit-icon">05</div><h3>Rest and recovery</h3><p>The copy presents Mamaki as calming for the mind and body, with a place in evening routines and restful unwinding.</p></article>
+          <article class="card benefit"><div class="benefit-icon">06</div><h3>Mineral-rich cup</h3><p>The document notes magnesium and potassium as part of Mamaki’s appeal for brain and nerve support.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="split" id="mamaki">
+      <div class="container split-grid">
+        <figure class="about-photo">
+          <img class="card" src="./plants.jpeg" alt="Close-up of Mamaki plants at Pulama Farm nursery rows" width="1050" height="1400" loading="lazy" />
+        </figure>
+        <div class="about-copy">
+          <div class="section-head" style="margin-bottom:0">
+            <span class="kicker">About Mamaki</span>
+            <h2>The “healer of the forest” in a modern daily tea ritual.</h2>
+            <p>The text describes Mamaki, or <em>Pipturus albidus</em>, as a plant long associated with traditional Hawaiian use. It is presented as earthy, slightly nutty, caffeine free, and well suited to both mindful daytime drinking and calm evening routines.</p>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>Pipturus albidus</strong><span>Native Hawaiian herbal tea plant featured in your source copy.</span></div>
+            <div class="stat"><strong>Caffeine free</strong><span>Designed for clarity and calm without coffee-like stimulation.</span></div>
+            <div class="stat"><strong>Earthy, nutty taste</strong><span>A warm flavor profile that can be enjoyed hot or iced.</span></div>
+            <div class="stat"><strong>Daily-use friendly</strong><span>The source FAQ says Mamaki tea can be enjoyed every day.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="brew">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">How to Brew</span>
+          <h2>Simple brewing for a darker amber or maroon-brown cup.</h2>
+          <p>The instructions in your document recommend using about 1 tablespoon of crushed leaves, or around 10 to 15 leaves, per quart of boiling water and steeping until the color deepens.</p>
+        </div>
+        <div class="brew-wrap">
+          <article class="card step"><div class="step-number">1</div><h3>Measure</h3><p>Use 1 tablespoon of crushed leaves, roughly 1 to 2 larger leaves or 10 to 15 leaves per quart.</p></article>
+          <article class="card step"><div class="step-number">2</div><h3>Steep</h3><p>Boil or steep for 10 to 20 minutes depending on the depth and strength you want.</p></article>
+          <article class="card step"><div class="step-number">3</div><h3>Watch the color</h3><p>Brew until the tea reaches a dark amber or maroon-brown tone.</p></article>
+          <article class="card step"><div class="step-number">4</div><h3>Enjoy again</h3><p>The leaves can be re-steeped 2 to 3 times for additional cups.</p></article>
+        </div>
+        <div class="pairings"><strong>Serving ideas</strong><p>The source text recommends serving Mamaki as iced tea with lemon or pairing it with lemongrass, mint, or lemon for a brighter flavor profile.</p></div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">FAQ</span>
+          <h2>Questions customers are likely to ask before ordering.</h2>
+          <p>The FAQ content below is adapted from the document you attached, with wording polished for web presentation while keeping the original substance intact.</p>
+        </div>
+        <div class="faq-grid">
+          <details class="card" open><summary>Does Mamaki tea contain caffeine?<span>+</span></summary><p>No. The source material describes Mamaki tea as caffeine free, making it suitable for calm daily drinking and evening use.</p></details>
+          <details class="card"><summary>Is it safe for daily use?<span>+</span></summary><p>The attached FAQ says Mamaki tea can be enjoyed daily. It also notes that side effects are rare.</p></details>
+          <details class="card"><summary>Can it help digestion?<span>+</span></summary><p>Your document says Mamaki may support digestion by increasing digestive enzymes, easing bloating, and soothing abdominal discomfort after meals.</p></details>
+          <details class="card"><summary>Is it high in antioxidants?<span>+</span></summary><p>The source describes Mamaki as containing polyphenols, catechins, flavonoids, and quercetin.</p></details>
+          <details class="card"><summary>Are there any cautions?<span>+</span></summary><p>The note in the document says allergic reactions are rare, but people sensitive to the Urticaceae family, such as nettles, may experience mild itching or rash.</p></details>
+          <details class="card"><summary>What does it taste like?<span>+</span></summary><p>The tea is described as warm, earthy, and slightly nutty, with a profile that works well hot or iced.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Brand voice additions</span>
+          <h2>Expanded sections added to make the site feel complete and more premium.</h2>
+          <p>To go beyond the label copy, I added storytelling, section hierarchy, a stronger hero message, serving suggestions, polished FAQs, and customer review placeholders that can later be replaced with real testimonials.</p>
+        </div>
+        <div class="testimonials">
+          <blockquote class="card"><p>“A smooth, grounding tea with a calm herbal character. I love that it feels restorative without caffeine.”</p><footer>Sample testimonial placeholder</footer></blockquote>
+          <blockquote class="card"><p>“The flavor is earthy and clean, and it makes a great iced tea with lemon. This section can later be replaced with verified customer quotes.”</p><footer>Sample testimonial placeholder</footer></blockquote>
+          <blockquote class="card"><p>“The farm story and Kona setting make the product feel rooted in place, not mass-produced.”</p><footer>Sample testimonial placeholder</footer></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container cta-wrap">
+        <div>
+          <span class="kicker" style="color:#f6d8a0">Order & Contact</span>
+          <h2>Bring Pulama Farm Mamaki tea into your daily ritual.</h2>
+          <p>This section brings together the contact details from your source file and frames them as a direct order or inquiry call-to-action. It can later be connected to Shopify, Square, Stripe payment links, or a custom checkout flow.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:mezeir@outlook.com">Email to order</a>
+            <a class="btn btn-secondary" href="tel:5105666100">Call Pulama Farm</a>
+          </div>
+        </div>
+        <aside class="contact-panel">
+          <h3>Contact details</h3>
+          <div class="contact-stack">
+            <div class="contact-item"><span>Email</span><strong>mezeir@outlook.com</strong></div>
+            <div class="contact-item"><span>Phone</span><strong>510-566-6100</strong></div>
+            <div class="contact-item"><span>Website</span><strong>www.pulamafarm.com</strong></div>
+            <div class="contact-item"><span>Location</span><strong>Makalei Estates, Kailua Kona, Hawaii 96740</strong></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© Pulama Farm · Hawaiian Mamaki tea grown and packaged on the Big Island.</p>
+      <div class="footer-links">
+        <a href="#farm">Our Farm</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#brew">Brewing</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const t=document.querySelector('[data-theme-toggle]');
+      const r=document.documentElement;
+      let d=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+      r.setAttribute('data-theme',d);
+      const setIcon=()=>{
+        t.innerHTML=d==='dark'
+          ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>'
+          : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+      };
+      setIcon();
+      t.addEventListener('click',()=>{d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);setIcon();});
+    })();
+  </script>
+</body>
+</html>
