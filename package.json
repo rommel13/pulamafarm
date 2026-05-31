@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@angular/core": "^21.2.15",
+    "@angular/platform-browser": "^21.2.15"
+  }
+}
