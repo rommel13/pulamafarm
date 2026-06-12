@@ -328,7 +328,7 @@ def create_web_service_file() -> bool:
     nginx_content = f'''# Nginx configuration for Pulama Farm Web Application
 server {
     listen 80;
-    server_name localhost;
+    server_name pulamafarm.duckdns.org localhost;
 
     # Access and error logs
     access_log /var/log/nginx/pulamafarm-web_access.log;
