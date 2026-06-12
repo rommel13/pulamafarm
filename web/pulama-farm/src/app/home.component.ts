@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   standalone: true,
+  imports: [RouterLink],
   selector: 'app-home',
   template: `
   <a class="skip-link" href="#content">Skip to content</a>
@@ -35,7 +37,7 @@ import { Component, OnInit } from '@angular/core';
         <h1>Hawaiian Mamaki tea grown with care in Kona.</h1>
         <p class="hero-copy">Pulama Farm offers a calm, earthy cup rooted in Hawaiian tradition. Our Mamaki tea is harvested in small batches, dried in the Kona sun, and prepared from carefully selected leaves for flavor, freshness, and daily ritual.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Order Mamaki Tea</a>
+          <a class="btn btn-primary" routerLink="/order">Order Mamaki Tea</a>
           <a class="btn btn-secondary" href="#brew">See brewing guide</a>
         </div>
         <div class="hero-facts">
@@ -168,7 +170,7 @@ import { Component, OnInit } from '@angular/core';
           <h2>Bring Pulama Farm Mamaki tea into your daily ritual.</h2>
           <p>We are dedicated to ensuring every order is handled with care, from secure payment options to proper shipping and handling. Your privacy is our priority, and we guarantee a smooth, worry-free experience from placing your order to enjoying your Mamaki tea.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:mezeir@outlook.com">Email to order</a>
+            <a class="btn btn-primary" routerLink="/order">Order Mamaki Tea</a>
             <a class="btn btn-secondary" href="tel:5105666100">Call Pulama Farm</a>
           </div>
         </div>
