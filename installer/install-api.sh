@@ -53,9 +53,31 @@ WantedBy=multi-user.target
 EOF
 
 # Reload systemd and start service
+echo "Reloading systemd and starting service..."
 sudo systemctl daemon-reload
 sudo systemctl enable pulamafarm-api
 sudo systemctl restart pulamafarm-api
+
+# Configure Nginx Reverse Proxy for API
+echo "Configuring Nginx reverse proxy for $API_HOST..."
+cat <<EOF | sudo tee /etc/nginx/sites-available/$API_HOST
+server {
+    listen 80;
+    server_name $API_HOST;
+
+    location / {
+        proxy_pass http://localhost:5000;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+}
+EOF
+
+# Enable the site and reload Nginx
+sudo ln -sf /etc/nginx/sites-available/$API_HOST /etc/nginx/sites-enabled/
+sudo nginx -t && sudo systemctl reload nginx
 
 # Quick API Test
 echo "Performing quick API test..."

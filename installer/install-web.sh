@@ -42,7 +42,7 @@ npm install
 
 # Run API Installer
 echo "Running API installer..."
-chmod +x ./installer/install-api.sh
+chmod +x installer/install-api.sh
 ./installer/install-api.sh
 
 # Configure Nginx
