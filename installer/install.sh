@@ -8,7 +8,7 @@
 # Note: Ensure you have internet access for dependency installation.
 
 # Configuration
-SOURCE_LOCATION="/path/to/your/source" # Set your source location here
+SOURCE_LOCATION="/home/admini/dev/pulamafarm" # Set your source location here
 DB_SOURCE="db/order.db"
 TARGET_DIR="/var/www/pulamafarm"
 HOST="pulamafarm.duckdns.org"
