@@ -34,9 +34,32 @@ cd $TARGET_DIR/api
 python3 -m venv venv
 ./venv/bin/pip install -r requirements.txt
 
+# Create Systemd Service
+echo "Creating systemd service for API..."
+cat <<EOF | sudo tee /etc/systemd/system/pulamafarm-api.service
+[Unit]
+Description=Pulama Farm Flask API
+After=network.target
+
+[Service]
+User=$USER
+Group=$USER
+WorkingDirectory=$TARGET_DIR/api
+ExecStart=/var/www/pulamafarm/api/venv/bin/python /var/www/pulamafarm/api/app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# Reload systemd and start service
+sudo systemctl daemon-reload
+sudo systemctl enable pulamafarm-api
+sudo systemctl restart pulamafarm-api
+
 # Quick API Test
 echo "Performing quick API test..."
-sleep 2 # Give Nginx and Flask a moment to initialize
+sleep 3 # Give Nginx and Flask a moment to initialize
 curl -s http://$API_HOST | grep "{" || echo "API test failed or returned no JSON"
 
 echo "API installation complete!"
