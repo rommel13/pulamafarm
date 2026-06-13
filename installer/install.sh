@@ -11,9 +11,10 @@
 SOURCE_LOCATION="/home/admini/dev/pulamafarm" # Set your source location here
 DB_SOURCE="db/order.db"
 TARGET_DIR="/var/www/pulamafarm"
-HOST="pulamafarm.duckdns.org"
+WEB_HOST="pulamafarm.duckdns.org"
+API_HOST="pulamafarm-api.duckdns.org"
 
-echo "Starting installation for $HOST..."
+echo "Starting installation for $WEB_HOST and $API_HOST..."
 
 # Ensure target directory exists
 sudo mkdir -p $TARGET_DIR
@@ -41,17 +42,16 @@ npm install
 # Note: Build command would go here if needed
 
 # Configure Nginx
-echo "Configuring Nginx for $HOST..."
+echo "Configuring Nginx for $WEB_HOST and $API_HOST..."
+
+# Remove existing configuration if it exists
+sudo rm -f /etc/nginx/sites-available/pulamafarm
+sudo rm -f /etc/nginx/sites-enabled/pulamafarm
+
 cat <<EOF | sudo tee /etc/nginx/sites-available/pulamafarm
 server {
     listen 80;
-    server_name $HOST;
-
-    location /api/ {
-        proxy_pass http://localhost:5000/;
-        proxy_set_header Host \$host;
-        proxy_set_header X-Real-IP \$remote_addr;
-    }
+    server_name $WEB_HOST;
 
     location / {
         root $TARGET_DIR/web;
@@ -59,10 +59,29 @@ server {
         try_files \$uri \$uri/ /index.html;
     }
 }
+
+server {
+    listen 80;
+    server_name $API_HOST;
+
+    location / {
+        proxy_pass http://localhost:5000/;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+    }
+}
 EOF
 
 sudo ln -sf /etc/nginx/sites-available/pulamafarm /etc/nginx/sites-enabled/
 sudo rm -f /etc/nginx/sites-enabled/default
 sudo systemctl restart nginx
+
+echo "Nginx restarted."
+
+# Quick API Test
+echo "Performing quick API test..."
+sleep 2 # Give Nginx and Flask a moment to initialize
+curl -s http://$API_HOST | grep "{" || echo "API test failed or returned no JSON"
 
 echo "Installation complete!"
