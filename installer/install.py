@@ -23,7 +23,7 @@ from typing import List, Optional
 # ============================================================================
 
 # Source code root directory on Ubuntu drive (REQUIRED - set this variable)
-source_code = "/mnt/ubuntu-drive/root-source-code"  # UPDATE THIS PATH
+source_code = "/home/admini/dev/pulamafarm"  # UPDATE THIS PATH
 
 # Directories for compiled artifacts (relative to source_code)
 API_TARGET_DIR = os.path.join(source_code, "var", "api")
@@ -169,7 +169,7 @@ def copy_database() -> bool:
     
     # Copy database to target
     shutil.copy2(db_source_path, os.path.join(DB_TARGET, "order.db"))
-    
+        
     log_message("Database copied to target location", "SUCCESS")
     return True
 
