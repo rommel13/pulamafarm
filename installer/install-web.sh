@@ -29,17 +29,21 @@ echo "Installing system dependencies..."
 sudo apt-get update
 sudo apt-get install -y nginx python3-pip python3-flask nodejs npm
 
-# Setup API (Flask)
-echo "Setting up Flask API..."
-cd $TARGET_DIR/api
-python3 -m venv venv
-./venv/bin/pip install -r requirements.txt
+# Copy Source Files
+echo "Copying source files from $SOURCE_LOCATION..."
+sudo cp -r $SOURCE_LOCATION/web $TARGET_DIR/web
+sudo cp -r $SOURCE_LOCATION/api $TARGET_DIR/api
 
 # Setup Web (Angular)
 echo "Setting up Angular Web..."
 cd $TARGET_DIR/web
 npm install
 # Note: Build command would go here if needed
+
+# Run API Installer
+echo "Running API installer..."
+chmod +x ./installer/install-api.sh
+./installer/install-api.sh
 
 # Configure Nginx
 echo "Configuring Nginx for $WEB_HOST and $API_HOST..."
