@@ -1,5 +1,5 @@
 # Configuration
-SOURCE_LOCATION="/home/admini/dev/pulamafarm/" # Set your source location here
+SOURCE_LOCATION="/home/romeq/dev/konamamaki/web/pulama-farm/dist/browser" # Set your source location here
 TARGET_DIR="/var/www/pulamafarm"
 WEB_HOST="pulamafarm.duckdns.org"
 
@@ -9,23 +9,14 @@ echo "Starting web installation for $WEB_HOST..."
 sudo rm -rf $TARGET_DIR/*
 sudo mkdir -p $TARGET_DIR
 
-# Install system dependencies (Ubuntu) and Node.js/NPM
+# Install system dependencies (Ubuntu) and Nginx
 echo "Installing system dependencies..."
-sudo apt-get update && sudo apt-get install -y nginx nodejs npm
+sudo apt-get update && sudo apt-get install -y nginx
 
-# Copy source code to a temporary build location
-echo "Copying source files from $SOURCE_LOCATION..."
-sudo cp -r $SOURCE_LOCATION/web/pulama-farm/* $TARGET_DIR/
-
-# Build the Angular application (create /dist)
-echo "Building Angular Application with npm run build..."
-cd $TARGET_DIR
-npm install
-npm run build
-
-# Copy only the transpiled 'dist' folder to target
-echo "Copying built files to final web root..."
-sudo cp -r dist/* $TARGET_DIR/
+# Copy the built distribution from web directory to target
+# The web directory contains the production build files
+echo "Copying built files from $SOURCE_LOCATION to $TARGET_DIR..."
+sudo cp -r $SOURCE_LOCATION/* $TARGET_DIR/
 
 # Configure Nginx for $WEB_HOST
 echo "Configuring Nginx for $WEB_HOST..."
