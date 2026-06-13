@@ -1,5 +1,6 @@
 # Configuration
-SOURCE_LOCATION="/home/romeq/dev/konamamaki/web/pulama-farm/dist/browser" # Set your source location here
+# ubuntu loc .55 =  /home/admini/dev/pulamafarm/web/pulama-farm/dist/pulama-farm/browser
+SOURCE_LOCATION="/home/admini/dev/pulamafarm/web/pulama-farm/dist/pulama-farm/browser" # Set your source location here
 TARGET_DIR="/var/www/pulamafarm"
 WEB_HOST="pulamafarm.duckdns.org"
 
