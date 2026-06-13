@@ -1,13 +1,5 @@
-#!/bin/bash
-
-# How to run this script on Ubuntu:
-# 1. Edit this file to set the correct SOURCE_LOCATION.
-# 2. Make the script executable: chmod +x installer/install-web.sh
-# 3. Run the script with sudo (required for apt-get and nginx configuration):
-#    sudo ./installer/install-web.sh
-
 # Configuration
-SOURCE_LOCATION="/home/admini/dev/pulamafarm" # Set your source location here
+SOURCE_LOCATION="/home/admini/dev/pulamafarm/" # Set your source location here
 TARGET_DIR="/var/www/pulamafarm"
 WEB_HOST="pulamafarm.duckdns.org"
 
@@ -19,11 +11,11 @@ sudo mkdir -p $TARGET_DIR
 
 # Install system dependencies (Ubuntu) and Node.js/NPM
 echo "Installing system dependencies..."
-sudo apt-get update && sudo apt-get install -y nginx
+sudo apt-get update && sudo apt-get install -y nginx nodejs npm
 
 # Copy source code to a temporary build location
 echo "Copying source files from $SOURCE_LOCATION..."
-sudo cp -r $SOURCE_LOCATION/web/* $TARGET_DIR/
+sudo cp -r $SOURCE_LOCATION/web/pulama-farm/* $TARGET_DIR/
 
 # Build the Angular application (create /dist)
 echo "Building Angular Application with npm run build..."
