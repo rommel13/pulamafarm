@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+﻿import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -14,7 +14,7 @@ import { RouterLink } from '@angular/router';
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20c0-5 2.5-8.2 7-10-1 4.5-4 8-7 10Z"></path><path d="M12 20c0-4.7-2.3-7.8-7-10 .8 4.8 3.8 8.2 7 10Z"></path><path d="M12 20V7"></path></svg>
         </span>
-        <span class="brand-text"><strong>Pulama Farm</strong><span>Mamaki tea from Kona</span></span>
+        <span class="brand-text"><strong>Pulama Farm</strong><span>Māmaki tea from Kona</span></span>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a routerLink="/">Home</a>
@@ -46,7 +46,7 @@ import { RouterLink } from '@angular/router';
         <!-- Product card -->
         <article class="card product-card" aria-label="Product selection">
           <div class="product-img-wrap">
-            <img src="/pulama-farm/product.jpg" alt="Mike's Hawaiian Mamaki Caffeine Free Herbal Tea pouch" width="500" height="600" />
+            <img src="/pulama-farm/product.jpg" alt="Mike's Hawaiian Māmaki Caffeine Free Herbal Tea pouch" width="500" height="600" />
           </div>
           <div class="product-details">
             <span class="product-badge">Kona Grown · Caffeine Free</span>
@@ -201,7 +201,7 @@ import { RouterLink } from '@angular/router';
         <div class="card order-summary" aria-label="Order summary">
           <h3 class="summary-title">Order Summary</h3>
           <div style="display:flex;gap:.85rem;align-items:center;padding:.5rem 0;border-bottom:1px solid color-mix(in srgb,var(--color-text) 8%,transparent)">
-            <img src="/pulama-farm/product.jpg" alt="Mike's Hawaiian Mamaki Tea" width="56" height="68" style="border-radius:.5rem;object-fit:cover;flex:none;background:#f0ead6" loading="lazy" />
+            <img src="/pulama-farm/product.jpg" alt="Mike's Hawaiian Māmaki Tea" width="56" height="68" style="border-radius:.5rem;object-fit:cover;flex:none;background:#f0ead6" loading="lazy" />
             <div style="flex:1">
               <div style="font-size:var(--text-sm);font-weight:700">Mike's Hawaiian Māmaki Tea</div>
               <div style="font-size:var(--text-xs);color:var(--color-text-faint)">Qty: <span id="summary-qty">1</span></div>
