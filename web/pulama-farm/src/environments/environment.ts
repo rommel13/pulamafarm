@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
-  apiUrl: 'http://localhost:8000',
-  websiteUrl: 'http://localhost:4200'
+  production: true,
+  apiUrl: 'https://pulamafarm-api.duckdns.org',
+  websiteUrl: 'https://pulamafarm.duckdns.org'
 };
