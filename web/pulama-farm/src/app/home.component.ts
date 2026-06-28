@@ -188,8 +188,7 @@ import { RouterLink } from '@angular/router';
 
   <footer class="site-footer">
     <div class="container footer-wrap">
-      <p>© Pulama Farm · Hawaiian Māmaki tea grown and packaged on the Big Island.</p>
-      <p class="footer-disclaimer">Made in a home kitchen not routinely inspected by the Department of Health.</p>
+      <p>© Pulama Farm · Hawaiian Māmaki tea grown and packaged on the Big Island.<br>Made in a home kitchen not routinely inspected by the Department of Health.</p>
       <div class="footer-links">
         <a href="#farm">Our Farm</a>
         <a href="#benefits">Benefits</a>
